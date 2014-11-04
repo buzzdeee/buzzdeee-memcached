@@ -1,5 +1,5 @@
 class memcached::params {
-  $package_name = 'memcached'
+  $package_name   = 'memcached'
   $package_ensure = 'installed'
   $service_enable = true
   $service_ensure = 'running'

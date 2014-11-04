@@ -43,12 +43,12 @@ class memcached (
   $service_flags  = $memcached::params::service_flags,
 ) inherits memcached::params {
 
-  class memcached::install {
+  class { memcached::install:
     package_name   => $package_name,
     package_ensure => $package_ensure,
   }
 
-  class memcached::service {
+  class { memcached::service:
     service_ensure => $service_ensure,
     service_enable => $service_enable,
     service_flags  => $service_flags,
