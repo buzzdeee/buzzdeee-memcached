@@ -36,11 +36,12 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class memcached (
-  $package_name   = $memcached::params::package_name,
-  $package_ensure = $memcached::params::package_ensure,
-  $service_ensure = $memcached::params::service_ensure,
-  $service_enable = $memcached::params::service_enable,
-  $service_flags  = $memcached::params::service_flags,
+  $package_name       = $memcached::params::package_name,
+  $package_ensure     = $memcached::params::package_ensure,
+  $service_ensure     = $memcached::params::service_ensure,
+  $service_enable     = $memcached::params::service_enable,
+  $service_flags      = $memcached::params::service_flags,
+  $service_hasrestart = $memcached::params::service_hasrestart,
 ) inherits memcached::params {
 
   class { memcached::install:
@@ -49,9 +50,10 @@ class memcached (
   }
 
   class { memcached::service:
-    service_ensure => $service_ensure,
-    service_enable => $service_enable,
-    service_flags  => $service_flags,
+    service_ensure     => $service_ensure,
+    service_enable     => $service_enable,
+    service_flags      => $service_flags,
+    service_hasrestart => $service_hasrestart,
   }
 
   Class['memcached::install'] ->
