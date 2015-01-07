@@ -29,11 +29,11 @@
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Sebastian Reitenbach <sebastia@l00-bugdead-prods.de>
 #
 # === Copyright
 #
-# Copyright 2014 Your name here, unless otherwise noted.
+# Copyright 2014 Sebastian Reitenbach, unless otherwise noted.
 #
 class memcached (
   $package_name       = $memcached::params::package_name,
@@ -44,12 +44,12 @@ class memcached (
   $service_hasrestart = $memcached::params::service_hasrestart,
 ) inherits memcached::params {
 
-  class { memcached::install:
+  class { 'memcached::install':
     package_name   => $package_name,
     package_ensure => $package_ensure,
   }
 
-  class { memcached::service:
+  class { 'memcached::service':
     service_ensure     => $service_ensure,
     service_enable     => $service_enable,
     service_flags      => $service_flags,

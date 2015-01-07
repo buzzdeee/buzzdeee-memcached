@@ -1,3 +1,6 @@
+# Private class, do not use directly.
+# Takes care of managing the service.
+
 class memcached::service (
   $service_ensure,
   $service_enable,

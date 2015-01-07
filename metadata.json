@@ -3,12 +3,21 @@
   "version": "0.1.0",
   "author": "Sebastian Reitenbach",
   "summary": "A puppet module to manage memcached",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/buzzdeee/buzzdeee-memcached.git",
   "project_page": "https://github.com/buzzdeee/buzzdeee-memcached",
   "issues_url": "https://github.com/buzzdeee/buzzdeee-memcached/issues",
-  "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
-  ]
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "OpenBSD",
+      "operatingsystemrelease": [
+        "5.6"
+      ]
+    }
+  ],
+  "tags": [
+    "OpenBSD",
+    "memcached"
+  ],
+  "dependencies": [ ]
 }
-
